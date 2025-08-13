@@ -1394,6 +1394,8 @@ img {
       font-size: 14px;
       margin-bottom: 30px;
       text-align: center; }
+    
+      
     .single-widget-area.newsletter-widget form input {
       width: 100%;
       height: 50px;
@@ -1402,6 +1404,272 @@ img {
       border-bottom: 2px solid #b0c364;
       font-size: 12px;
       font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      padding: 0 20px; }
+    .single-widget-area.newsletter-widget p {
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 11px;
+      margin-bottom: 0; }
+
+.comment_area {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 50px; }
+  .comment_area .comment-content .comment-author {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 51px;
+    flex: 0 0 51px;
+    min-width: 51px;
+    margin-right: 20px;
+    height: 51px;
+    border-radius: 50%; }
+    @media only screen and (max-width: 767px) {
+      .comment_area .comment-content .comment-author {
+        margin-right: 15px; } }
+  .comment_area .comment-content .comment-meta {
+    margin-bottom: 30px; }
+    .comment_area .comment-content .comment-meta .post-author,
+    .comment_area .comment-content .comment-meta .post-date,
+    .comment_area .comment-content .comment-meta .reply {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 5px;
+      display: inline-block;
+      font-size: 14px;
+      color: #272727;
+      margin-right: 30px; }
+      @media only screen and (max-width: 767px) {
+        .comment_area .comment-content .comment-meta .post-author,
+        .comment_area .comment-content .comment-meta .post-date,
+        .comment_area .comment-content .comment-meta .reply {
+          font-size: 12px;
+          margin-right: 15px; } }
+      .comment_area .comment-content .comment-meta .post-author::after,
+      .comment_area .comment-content .comment-meta .post-date::after,
+      .comment_area .comment-content .comment-meta .reply::after {
+        position: absolute;
+        top: 0;
+        right: -16px;
+        content: '|';
+        z-index: 1; }
+        @media only screen and (max-width: 767px) {
+          .comment_area .comment-content .comment-meta .post-author::after,
+          .comment_area .comment-content .comment-meta .post-date::after,
+          .comment_area .comment-content .comment-meta .reply::after {
+            right: -8px; } }
+      .comment_area .comment-content .comment-meta .post-author:hover,
+      .comment_area .comment-content .comment-meta .post-date:hover,
+      .comment_area .comment-content .comment-meta .reply:hover {
+        color: #b0c364; }
+    .comment_area .comment-content .comment-meta .reply {
+      margin-right: 0; }
+      .comment_area .comment-content .comment-meta .reply::after {
+        display: none; }
+    .comment_area .comment-content .comment-meta p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 2;
+      font-weight: 500; }
+  .comment_area .single_comment_area {
+    margin-bottom: 30px; }
+    .comment_area .single_comment_area:last-of-type {
+      margin-bottom: 0; }
+  .comment_area .children .single_comment_area {
+    margin-left: 50px;
+    margin-top: 30px; }
+
+/* :: 11.0 Ingredients Area CSS */
+.recipe-info {
+  position: relative;
+  z-index: 1;
+  background-color: #b0c364;
+  padding: 50px 20px;
+  margin-bottom: 30px; }
+  .recipe-info h5 {
+    color: #ffffff;
+    margin-bottom: 50px;
+    font-size: 18px;
+    padding-left: 30px; }
+  .recipe-info .info-data {
+    position: relative;
+    z-index: 1; }
+    .recipe-info .info-data li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -ms-grid-row-align: center;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 2px solid #a3b65a;
+      font-size: 16px;
+      font-weight: 600; }
+      .recipe-info .info-data li:last-child {
+        border-bottom: none; }
+      .recipe-info .info-data li span {
+        color: #ffffff;
+        padding-left: 15px; }
+
+.ingredients {
+  position: relative;
+  z-index: 1;
+  background-color: #ebf4f6;
+  padding: 50px 20px; }
+  .ingredients h5 {
+    color: #272727;
+    margin-bottom: 50px;
+    font-size: 18px;
+    padding-left: 30px; }
+  .ingredients .custom-control {
+    padding-left: 2.5rem;
+    margin-bottom: 20px;
+    min-height: 35px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 2px solid #d6e1e4;
+    padding-bottom: 20px; }
+    .ingredients .custom-control .custom-control-label {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
+      padding-top: 3px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #8b8b8b;
+      padding-left: 10px; }
+      .ingredients .custom-control .custom-control-label::before {
+        width: 22px;
+        height: 22px;
+        border: 1px solid;
+        border-color: #d6e1e4;
+        background-color: #ffffff;
+        border-radius: 0; }
+      .ingredients .custom-control .custom-control-label::after {
+        top: 5px;
+        left: -23px;
+        width: 20px;
+        height: 20px; }
+  .ingredients .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #b0c364; }
+
+/* :: 12.0 Treading Post Area */
+.treading-post-area {
+  position: fixed;
+  z-index: 9999;
+  width: 480px;
+  height: 100%;
+  background-color: black;
+  right: -700px;
+  top: 0;
+  color: orange;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-transition-duration: 800ms;
+  transition-duration: 800ms; }
+  @media only screen and (max-width: 767px) {
+    .treading-post-area {
+      width: 320px;
+      padding: 30px; } }
+  .treading-post-area .close-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color:orange;
+    z-index: 100;
+    font-size: 20px;
+    cursor: pointer; }
+    .treading-post-area .close-icon:hover, .treading-post-area .close-icon:focus {
+      color: orange; }
+  .treading-post-area h4 {
+    margin-bottom: 50px;
+    color: orange; }
+    @media only screen and (max-width: 767px) {
+      .treading-post-area h4 {
+        font-size: 16px; } }
+  @media only screen and (max-width: 767px) {
+    .treading-post-area .single-blog-post.style-1 .blog-content {
+      padding-left: 15px; } }
+  .treading-post-area .single-blog-post.style-1 .blog-content .post-title {
+    font-size: 16px; }
+    @media only screen and (max-width: 767px) {
+      .treading-post-area .single-blog-post.style-1 .blog-content .post-title {
+        font-size: 14px; } }
+  .treading-post-area.on {
+    right: 0; }
+
+/* :: 13.0 Contact Area CSS */
+.contact-content {
+  position: relative;
+  z-index: 2; }
+  .contact-content .contact-social-info a {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+    color: orange; }
+    .contact-content .contact-social-info a:hover, .contact-content .contact-social-info a:focus {
+      color: black; }
+  .contact-content .single-contact-info {
+    position: relative;
+    margin-bottom: 20px; }
+    .contact-content .single-contact-info:last-child {
+      margin-bottom: 0; }
+    .contact-content .single-contact-info p {
+      font-size: 15px;
+      margin-bottom: 0; }
+    .contact-content .single-contact-info .icon {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 25px;
+      flex: 0 0 25px;
+      max-width: 25px;
+      width: 25px; }
+
+.contact-form-area .form-control {
+  position: relative;
+  z-index: 2;
+  height: 54px;
+  width: 100%;
+  background-color: #ffffff;
+  font-size: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #dadfe5;
+  border-bottom: 2px solid #dadfe5;
+  border-radius: 0;
+  padding: 15px 30px;
+  font-weight: 500;
+  color: orange;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms; }
+  .contact-form-area .form-control:focus {
+    box-shadow: none;
+    border-bottom-color: #b0c364; }
+.contact-form-area textarea.form-control {
+  height: 190px; }
+
+.map-area {
+  position: relative;
+  z-index: 2; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .map-area {
+      margin-top: 50px; } }
+  @media only screen and (max-width: 767px) {
+    .map-area {
+      margin-top: 50px; } }
+  .map-area iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    margin-bottom: 0; }
+    @media only screen and (max-width: 767px) {
+      .map-area iframe {
+        height: 300px; } }
+
+/* ====== The End ====== */
+
+/*# sourceMappingURL=style.css.map */
   
 
 

@@ -1728,7 +1728,7 @@ img {
 .hero-text-arabic {
   position: absolute; 
 
-  top: -14px;
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Amiri', serif; /* خط عربي مهيب */

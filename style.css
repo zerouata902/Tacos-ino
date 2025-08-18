@@ -2489,7 +2489,7 @@ body {
   color: white;
   font-weight: bold;
   font-size: 20px;
-  animation: changeColor 2s infinite alternate;
+  animation: change 1.5s infinite alternate;
 }
 
 @keyframes changeColor {
@@ -2501,7 +2501,14 @@ body {
   }
 }
 
-
+@keyframes change {
+  0% {
+    color: black;
+  }
+  100% {
+    color: orange;
+  }
+  }
 
 .item p {
   color: orange;

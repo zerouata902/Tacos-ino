@@ -2073,9 +2073,11 @@ h3{
 
 .item .price {
   margin-top: 5px;
-  color:orange;
+  color:#870D0D;
   font-weight:bold;
   font-size:15px;
+  position:relative;
+  z-index:1;
 }
 
 .old-price {
@@ -2436,20 +2438,40 @@ body {
   padding: 15px;
 }
 
-
 .item {
-  background:black;
-  color: orange;
+  background: white;
+  color: white;
   font-weight: bold;
   border-radius: 10px;
-  width:  170px;
+  width: 170px;
   margin: 15px;
   padding: 10px;
-  box-shadow: 0 0 5px black ;
+  box-shadow: 0 0 5px black;
   text-align: center;
-  transition: transform 0.2s ease;
-  
+  position: relative;
+  overflow: hidden;
 }
+
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%, 100%) scale(0.8); /* مخفية لتحت وصغيرة */
+  width: 170px;
+  height: 70px;
+  background: orange;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* الدائرة تبان منين نضغط مرة واحدة */
+.item.show-circle::after {
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+}
+
 
 @media (max-width:,200px) {
   .item {

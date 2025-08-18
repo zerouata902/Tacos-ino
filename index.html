@@ -1738,7 +1738,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
+<script>
+// نجيب جميع العناصر اللي عندها class "item"
+const items = document.querySelectorAll('.item');
 
+// نضيف لكل واحد event عند الضغط
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.add('show-circle'); // تضيف class "show-circle" مرة وحدة
+  });
+});
+</script>
   
   
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />

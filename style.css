@@ -2079,6 +2079,16 @@ h3{
   top:15px;
   position:relative;
   z-index:1;
+    animation: Color 1.5s infinite alternate;
+  
+}
+@keyframes Color {
+  0% {
+    color: orange;
+  }
+  100% {
+    color: black;
+  }
 }
 
 .old-price {

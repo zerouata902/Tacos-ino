@@ -2440,7 +2440,7 @@ body {
 }
 
 .item {
-  background: white;
+  background:black;
   color: white;
   font-weight: bold;
   border-radius: 10px;
@@ -2460,7 +2460,7 @@ body {
   left: 50%;
   transform: translate(-50%, 100%) scale(0.8); /* مخفية لتحت وصغيرة */
   width: 170px;
-  height: 70px;
+  height: 80px;
   background: orange;
   border-radius: 50%;
   opacity: 0;

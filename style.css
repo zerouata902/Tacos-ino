@@ -2903,6 +2903,7 @@ color: orange;
 /* محتوى المودال */
 .modal-content {
   background: black;
+  color:orange;
   padding: 20px;
   border-radius: 15px;
   text-align: center;

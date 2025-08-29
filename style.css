@@ -523,7 +523,7 @@ img {
   box-shadow: 0 8px 15px orange;
   transition: transform 0.3s ease;
   z-index: 1000;
-   bottom: 25px;
+   
 }
 
 #toggler:hover {
@@ -2888,3 +2888,271 @@ color: orange;
     color: white;
 }
 
+/* Modal خلفية */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* محتوى المودال */
+.modal-content {
+  background: black;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+  position: relative;
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+/* صورة */
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* زر الإغلاق */
+.close {
+  position: absolute;
+  top: 0; right: 5px;
+  font-size:33px;
+  cursor: pointer;
+  color:white;
+}
+.close :hover {
+  color:orange;
+}
+/* زر إضافة */
+#modalAddToCart {
+  background: orange;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#modalAddToCart:hover {
+  background: orange;
+}
+
+/* أنيميشن */
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+  }
+
+
+/* الصورة الكبيرة */
+.slider {
+  width: 100%;
+  height:230px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  background: #000;
+  
+    margin-top: 73px;
+}
+
+
+
+.slides {
+  display: flex;
+  width: 100%; /* خليه 100% غير */
+  transition: transform 1s ease-in-out; /* باش يتحرك بنعومة */
+}
+
+
+.slides img {
+  flex: 0 0 100%;   /* كل صورة تاخد 100% من عرض السلايدر */
+  height: 240px;
+  object-fit: contain; /* الصورة كاملة */
+}
+
+
+.slides video {
+  flex: 0 0 100%;   /* كل صورة تاخد 100% من عرض السلايدر */
+  height: 230px;
+  object-fit: contain;
+  
+  /* الصورة كاملة */
+}
+
+.small-slider {
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  position: relative;
+  bottom:15px;
+}
+
+.small-slides {
+  display: flex;
+  width: 200%; /* حيت عندنا 6 صور */
+}
+
+.small-slides img {
+    width: calc(100% / 6 - 10px);
+  flex-shrink: 0;
+  margin: 0 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 73px;
+  background: #000;
+  color: #fff;
+  position: fixed;   /* يبقى ديما ثابت */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+/* أيقونة الهامبرغر */
+#toggler i {
+  font-size: 28px;
+  cursor: pointer;
+  position :relative;
+  bottom:4px;
+}
+
+/* الوسط - Dropdown */
+.center-section {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #111; 
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 100%;
+  border-radius: 8px;
+  margin-top: 5px;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content span {
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  
+}
+
+.dropdown-content span:hover {
+  background-color: orange;
+  color:black;
+}
+
+/* اظهار dropdown عند الضغط */
+.dropdown.show .dropdown-content {
+  display: flex;
+}
+
+/* اليمين - اللوغو */
+.right-section .logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.action-box {
+  background-color: #000; /* خلفية سوداء */
+  color: white; /* النص أبيض */
+  padding: 10px 30px;
+  display: inline-block;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;;
+  
+}
+
+.action-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.action-box h2 {
+  margin: 0;
+  font-size: 15px;
+  color:white;
+}
+
+
+
+/* أزرار التحكم */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  position :relative;
+  bottom:20px;
+
+  
+}
+
+.control {
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  transition: 0.3s;
+  z-index:1;
+  position :relative;
+}
+
+.control:hover {
+  background-color: #ff0000;
+}
+.control.active {
+  background-color: #ff0000; /* اللون الأحمر */
+  color: white;
+  }
+  

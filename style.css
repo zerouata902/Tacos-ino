@@ -3113,11 +3113,20 @@ color: orange;
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
+
 .action-box h2 {
   margin: 0;
   font-size: 15px;
-  color:black;
-}
+  color:white;
+    white-space: nowrap;
+    border-right: 2px solid red; /* بحال الكورسر */
+    width: fit-content;
+    overflow: hidden;
+    position: relative ;
+    left:30px;
+ 
+    
+  }
 
 
 

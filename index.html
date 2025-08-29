@@ -171,23 +171,45 @@
     <!-- ##### Treading Post Area Start ##### -->
 
 
-   
-                   <header class="hero">
-                       
-<video id="myVideo" autoplay muted loop controls playsinline>
-  <source src="images/D+.mp4" type="video/mp4" />
-  المتصفح لا يدعم الفيديو.
-</video>
+  <!-- الصورة الكبيرة -->
+  <div class="slider">
+    <div class="slides">
+ 
 
-    <div class="logo-circle"><img src="images/Logotime.png" alt="logo" /></div>
-   <div class="hero-text-arabic">
-  <span id="arabic-text"></span>
+      <img src="images/VV1.png" alt="Plat 2">
+      <img src="images/VV1.png" alt="Plat 2">
+      <img src="images/VV1.png" alt="Plat 3">
+    </div>
+  </div>
+
+  <div class="controls">
+  <div class="control active" data-index="0"></div>
+  <div class="control" data-index="1"></div>
+  <div class="control" data-index="2"></div>
 </div>
-<div class="delivery-badge">
-  <i class="fas fa-hamburger"></i>
-  <span data-fr="NOTRE MENU" data-ar="OUR MENU">OUR MENU</span>
-</div>
-</header>
+  <!-- الصور الصغار -->
+  <div class="small-slider">
+    <div class="small-slides">
+      <img src="images/Y1.png" alt="Small 1">
+      <img src="images/Y2.png" alt="Small 2">
+      <img src="images/Y3.png" alt="Small 3">
+      <img src="images/Y4.png" alt="Small 4">
+      <img src="images/Y5.png" alt="Small 5">
+      <img src="images/Y6.png" alt="Small 6">
+        <img src="images/Y7.png" alt="Small 7">
+        <img src="images/Y8.png" alt="Small 8">
+        <img src="images/Y9.png" alt="Small 9">
+    </div>
+    
+  </div>
+
+
+
+<div class="action-box" data-ar="شوف واطلب" data-fr="Voir et Commander">
+  <h2>Voir et Commander</h2>
+		  </div>
+   
+ 
 
  
 
@@ -1749,7 +1771,102 @@ items.forEach(item => {
   });
 });
 </script>
+
+<script>
+    // فتح المودال عند الضغط على item
+document.querySelectorAll('.item').forEach(item => {
+  item.addEventListener('click', function() {
+    let img = this.querySelector('img').src;
+    let title = this.querySelector('h3').innerText;
+    let price = this.querySelector('.price').innerText;
+    let priceValue = this.querySelector('.price').getAttribute('data-price');
+
+    document.getElementById('modalImage').src = img;
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalPrice').innerText = price;
+
+    // تحديث زر إضافة للسلة
+    let addBtn = document.getElementById('modalAddToCart');
+    addBtn.onclick = () => addToCart(title, priceValue, img);
+
+    document.getElementById('itemModal').style.display = "flex";
+  });
+});
+
+// إغلاق المودال
+document.querySelector('.close').onclick = () => {
+  document.getElementById('itemModal').style.display = "none";
+};
+window.onclick = function(e) {
+  if (e.target == document.getElementById('itemModal')) {
+    document.getElementById('itemModal').style.display = "none";
+  }
+};
+</script>
+<script>  
+document.addEventListener("DOMContentLoaded", function() {  
+  // --- السلايدر الكبير ---  
+  const bigSlides = document.querySelector(".slides");  
+  const bigImages = document.querySelectorAll(".slides img");  
+  let bigIndex = 0;  
   
+  function showBigSlide() {  
+    bigSlides.style.transition = "transform 1s ease-in-out";  
+    bigSlides.style.transform = `translateX(-${bigIndex * 100}%)`;  
+  }  
+  
+  setInterval(() => {
+    bigIndex = (bigIndex + 1) % bigImages.length;
+    showBigSlide();
+  }, 10000); // كل 10 ثواني تبديل  
+  
+  // --- السلايدر الصغير ---  
+  const smallSlides = document.querySelector(".small-slides");  
+  const smallImages = document.querySelectorAll(".small-slides img");  
+  let smallIndex = 0;  
+  let visible = 3; // كايبانوا 3 صور فكل مرة  
+  
+  function showSmallSlide() {  
+    smallIndex = (smallIndex + 1) % (smallImages.length / visible);  
+    smallSlides.style.transition = "transform 1s ease-in-out";  
+    smallSlides.style.transform = `translateX(-${smallIndex * 50}%)`;  
+  }  
+  
+  setInterval(showSmallSlide, 10000); // كل 10 ثواني تبديل  
+
+  // --- التحكم بالسلايدر الكبير عن طريق الأزرار ---
+  const controls = document.querySelectorAll(".control"); // حدد أزرارك بالclass "control"
+  controls.forEach(ctrl => {
+    ctrl.addEventListener("click", () => {
+      bigIndex = parseInt(ctrl.dataset.index); // نجيب الرقم من data-index
+      showBigSlide();
+    });
+  });
+});
+</script>
+
+  <script>
+  // اختيار عناصر الـ dropdown
+  const dropbtn = document.querySelector('.dropbtn');
+  const dropdown = document.querySelector('.dropdown');
+
+  // فتح / غلق الـ dropdown عند الضغط على الزر
+  dropbtn.addEventListener('click', () => {
+    dropdown.classList.toggle('show');
+  });
+
+  // غلق الـ dropdown إذا ضغط المستخدم خارجها
+  window.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+    }
+  });
+
+  // دالة لتغيير اللغة
+  function switchLang(lang) {
+    alert("Language switched to: " + lang);
+  }
+  </script>
   
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -1765,6 +1882,5 @@ items.forEach(item => {
     <script src="js/active.js"></script>
     
 </body>
-
-        </html>
+</html>
     

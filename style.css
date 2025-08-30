@@ -1821,11 +1821,10 @@ h3{
   align-items: center;
   margin-bottom: 10px;
    
-   font-weight: bold;
    font-size:28px;
    color :white;
     text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-    background: linear-gradient(70deg, orange,#870D0D, black);
+    background: linear-gradient(80deg, orange,#870D0D, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -520,7 +520,7 @@ img {
   
   position: relative; 
   border-radius: 12px;
-  box-shadow: 0 4px 8px #870D0D;
+  box-shadow: 0 4px 8px orange;
   transition: transform 0.3s ease;
   z-index: 1000;
    

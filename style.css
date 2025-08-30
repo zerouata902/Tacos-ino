@@ -3149,7 +3149,7 @@ color: orange;
   width: 25px;
   height: 25px;
   background-color: black;
-  color: white;
+  color: black;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -3162,10 +3162,10 @@ color: orange;
 }
 
 .control:hover {
-  background-color: #ff0000;
+  background-color: orange;
 }
 .control.active {
-  background-color: #ff0000; /* اللون الأحمر */
+  background-color: orange; /* اللون الأحمر */
   color: white;
   }
   

@@ -3105,7 +3105,7 @@ color: orange;
   position: relative;
   letter-spacing: 2px;         /* مسافة بين الحروف */
   text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-  background: linear-gradient(90deg, #orange, black, orange);
+  background: linear-gradient(90deg, orange, black, orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite; /* أنيميشن ديال اللمعان */

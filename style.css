@@ -1824,7 +1824,7 @@ h3{
    font-weight: bold;
    font-size:28px;
     text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-    background: linear-gradient(90deg, #870D0D,white,#870D0D);
+    background: linear-gradient(90deg, black,orange,orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

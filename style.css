@@ -2996,6 +2996,7 @@ color: orange;
   overflow: hidden;
   position: relative;
   bottom:15px;
+  background:black;
 }
 
 .small-slides {

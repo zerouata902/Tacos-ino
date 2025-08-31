@@ -1823,8 +1823,7 @@ h3{
    font-family: 'Amiri', serif;
    font-weight: bold;
    font-size:28px;
-    text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-    background: linear-gradient(black,orange);
+     background: linear-gradient(to right, black 50%, orange 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

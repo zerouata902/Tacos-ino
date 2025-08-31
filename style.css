@@ -1824,14 +1824,14 @@ h3{
    font-weight: bold;
    font-size:28px;
     text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-    background: linear-gradient(90deg, black,orange,orange);
+    background: linear-gradient(40deg, black,orange,orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .border-left {
   width: 7px;
   height: 25px;
-  background: white;
+  background: linear-gradient(black,orange);
   margin-right: 11px;
  
 }
@@ -3108,7 +3108,7 @@ color: orange;
   position: relative;
   letter-spacing: 2px;         /* مسافة بين الحروف */
   text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-    background: linear-gradient(70deg, orange,#870D0D, black);
+    background: linear-gradient(70deg, orange,#870D0D, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite; /* أنيميشن ديال اللمعان */

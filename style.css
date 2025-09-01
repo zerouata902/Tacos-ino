@@ -2065,26 +2065,21 @@ h3{
 
 
 
-
-
 .item .price {
-  position: absolute;
-  
-  left: 50%;
-  margin-bottom: 5px;
-  bottom:15px;
-  transform: translate(-50%, -50%);
-  color: orange; /* اللون العادي */
-  font-size: 20px;
+  margin-top: 5px;
+  color: white;       /* اللون الأصلي */
   font-weight: bold;
-  opacity: 1; /* يبقى باين ديما */
-  transition: color 0.4s ease;
+  font-size: 15px;
+  top: 15px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ملي ندوز على item يتبدل اللون */
 .item:hover .price {
   color: black;
 }
+
 
 
 

@@ -307,15 +307,21 @@ function initMap() {
   map = L.map('map').setView(restaurantLatLng, 15);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-  const restaurantIcon = L.icon({
+  // أيقونة المطعم (دائرية بالصورة)
+    const restaurantIcon = L.icon({
     iconUrl: 'images/Logotime.png',
     iconSize: [50, 50],
     iconAnchor: [25, 50],
     className: 'circular-icon'
   });
+  
 
-  L.marker(restaurantLatLng, { icon: restaurantIcon }).addTo(map).bindPopup("دير العلامة في المكان لبغيتي إوصلك لها دوموند وشكرا").openPopup();
+  L.marker(restaurantLatLng, { icon: restaurantIcon })
+    .addTo(map)
+    .bindPopup("📍 هذا هو مكان المطعم")
+    .openPopup();
 
+  // دائرة التوصيل
   L.circle(restaurantLatLng, {
     color: 'red',
     fillColor: '#f03',
@@ -323,6 +329,15 @@ function initMap() {
     radius: deliveryRadius
   }).addTo(map);
 
+  // أيقونة الزبون (Font Awesome رجل واقف)
+  const customerIcon = L.divIcon({
+    html: '<div class="customer-icon"><i class="fas fa-male"></i></div>',
+    className: '', // ما نحتاجوش كلاس خارجي
+    iconSize: [40, 40],
+    iconAnchor: [20, 40]
+  });
+
+  // حدث عند الضغط على الخريطة
   map.on("click", function (e) {
     const dist = getDistance(e.latlng, { lat: restaurantLatLng[0], lng: restaurantLatLng[1] });
     if (dist > deliveryRadius) {
@@ -335,7 +350,10 @@ function initMap() {
     if (customerMarker) {
       customerMarker.setLatLng(selectedLatLng);
     } else {
-      customerMarker = L.marker(selectedLatLng).addTo(map).bindPopup("✅ موقعك").openPopup();
+      customerMarker = L.marker(selectedLatLng, { icon: customerIcon })
+        .addTo(map)
+        .bindPopup("✅ موقعك")
+        .openPopup();
     }
 
     document.getElementById("send-order-button").style.display = "block";
@@ -344,7 +362,7 @@ function initMap() {
   setTimeout(() => {
     map.invalidateSize();
   }, 300);
-}
+      }
 
 // ✅ إرسال الطلب للواتساب
 function sendWhatsAppOrder() {

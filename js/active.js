@@ -318,7 +318,7 @@ function initMap() {
 
   L.marker(restaurantLatLng, { icon: restaurantIcon })
     .addTo(map)
-    .bindPopup("📍 هذا هو مكان المطعم")
+    .bindPopup("📍 من فضلك حدد موقعك بدقة")
     .openPopup();
 
   // دائرة التوصيل
@@ -352,7 +352,7 @@ function initMap() {
     } else {
       customerMarker = L.marker(selectedLatLng, { icon: customerIcon })
         .addTo(map)
-        .bindPopup("✅ موقعك")
+        .bindPopup("✅  شكرا ، الموقع تسجّل ")
         .openPopup();
     }
 

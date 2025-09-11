@@ -1982,7 +1982,7 @@ h3{
 }
 .order-options, #map-container {
   display: none;
-  background: #111;
+  background: black;
   padding: 20px;
   position: fixed;
   bottom: 60px;
@@ -2023,7 +2023,7 @@ h3{
 }
 .order-options {
   display: none;
-  background: #111;
+  background: black;
   padding: 20px;
   position: fixed;
   bottom: 60px;

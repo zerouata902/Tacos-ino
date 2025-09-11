@@ -1935,6 +1935,7 @@ h3{
   transition: 0.3s;
 }
 
+
 .cart-page {
   display: none;
   position: fixed;
@@ -1945,6 +1946,11 @@ h3{
   padding: 20px;
   overflow-y: auto;
   z-index: 1000;
+}
+.cart-page h3{
+  color:white;
+  font-size:20px;
+  top:5px;
 }
 .cart-item {
   display: flex;
@@ -2011,7 +2017,8 @@ h3{
 }
 
 .order-button:hover {
-  background: linear-gradient(135deg, #00e676, #00c853);
+  background:orange;
+  color:black;
   transform: scale(1.03);
 }
 .order-options {

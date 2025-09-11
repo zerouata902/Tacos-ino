@@ -1623,34 +1623,42 @@
   </button>
 </footer>
 
-<!-- صفحة السلة -->
+<!-- أيقونة الإغلاق داخل cart-page -->
 <div class="cart-page" id="cart-page">
+  <span class="close-cart" onclick="closeCart()">
+    <i class="fa fa-times"></i>
+  </span>
+
   <h3 data-fr="Votre demande" data-ar="طلباتك">Votre demande</h3>
   <div id="cart-items"></div>
-  
-  <button id="back-to-menu" onclick="hideCartPage()"> × </button>
+
   <!-- زر اطلب الآن -->
-  <button class="order-button" id="order-button" onclick="showOrderOptions()" data-fr="Commander" data-ar="اطلب الآن">اطلب الآن</button>
+  <button class="order-button" id="order-button" onclick="showOrderOptions()" data-fr="Commander" data-ar=" أطلب الأن">
+    Commander now
+  </button>
 </div>
 
-<!-- اختيارات التوصيل -->
 <div class="order-options" id="order-options">
-  <button onclick="selectOption('local')" data-fr="Commander sur place" data-ar="طلب في المطعم">طلب في المطعم</button>
-  <button onclick="selectOption('delivery')" data-fr="Livraison" data-ar="توصيل">توصيل</button>
+  <button onclick="selectOption('local')" data-fr="Commander sur place" data-ar="طلب في المطعم">
+    <i class="fa fa-handshake"></i> Commander sur place
+  </button>
+  <button onclick="selectOption('delivery')" data-fr="Livraison" data-ar="توصيل">
+    <i class="fa fa-motorcycle"></i> Livraison
+  </button>
 </div>
 
 <!-- الخريطة -->
 <div id="map-container" style="display: none;">
   <div id="map" style="height: 250px;"></div>
-  <button id="send-order-button" onclick="sendWhatsAppOrder()" style="display:none;" data-fr="Envoyer la commande" data-ar="📤 إرسال الطلب">
-    📤 إرسال الطلب
+  <button id="send-order-button" onclick="sendWhatsAppOrder()" style="display:none;" data-fr="Envoyer la commande via whatsApp" data-ar="📤 إرسال   الطلب">
+    📤 Envoyer via WhatsApp
   </button>
 </div>
   
 <!-- Modal -->
 <div id="itemModal" class="modal">
   <div class="modal-content">
-    <span class="close"style="color:orange; font-weight :bold;">&times;</span>
+    <span class="close"style="color:orange;">&times;</span>
     <img id="modalImage" src="" alt="Item Image">
     <h3 id="modalTitle"style="color:orange; font-weight :bold;"></h3>
     <p id="modalPrice" style="color:white; font-weight :bold;"></p>
@@ -1783,7 +1791,17 @@ items.forEach(item => {
   });
 });
 </script>
+			
+<script>
+	function closeCart() {
+  document.getElementById("cart-page").style.display = "none";
+  document.getElementById("order-options").style.display = "none";
+  document.getElementById("map-container").style.display = "none";
 
+  // نرجع زر "Commander now" يبان من جديد
+  document.getElementById("order-button").style.display = "block";
+	}
+</script>
 <script>
     // فتح المودال عند الضغط على item
 document.querySelectorAll('.item').forEach(item => {

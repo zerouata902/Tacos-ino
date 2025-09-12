@@ -3048,7 +3048,7 @@ color: orange;
   overflow: hidden;
   
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  bottom:10px
+  top:15px
   background: #000;
   
   
@@ -3240,7 +3240,7 @@ color: orange;
   gap: 10px;
   position :relative;
   margin-top:20px;
-  bottom:20px;
+  bottom:30px;
   background:black;
   
 }

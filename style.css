@@ -3066,8 +3066,10 @@ color: orange;
 
 .slides img {
   flex: 0 0 100%;   /* ÙƒÙ„ ØµÙˆØ±Ø© ØªØ§Ø®Ø¯ 100% Ù…Ù† Ø¹Ø±Ø¶ Ø§Ù„Ø³Ù„Ø§ÙŠØ¯Ø± */
-    height: 240px;
-  object-fit: contain; /* Ø§Ù„ØµÙˆØ±Ø© ÙƒØ§Ù…Ù„Ø© */
+    width: 100%;
+  height: auto;          /* خليها تتأقلم */
+  max-height: 50vh;      /* باش ماتخنقش فالتليفون */
+  object-fit: contain;   /* الصورة كاملة */
 }
 
 

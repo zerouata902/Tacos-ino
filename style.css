@@ -3216,24 +3216,25 @@ color: orange;
   margin-top: 10px;
   position :relative;
   bottom:20px;
-  
+  background:black
   
 }
 
 .control {
   width: 25px;
   height: 25px;
-  background-color:black;
-  color: white;
+  background-color:orange;
+  color:black;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
+  font-size:12px;
   transition: 0.3s;
   z-index:1;
-  
+  position :relative;
+  bottom:14px;
 }
 
 .control:hover {

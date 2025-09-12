@@ -3072,7 +3072,7 @@ color: orange;
 /* 📱📲 التابليت */
 @media (min-width: 481px) and (max-width: 1024px) {
   .slider {
-    max-height: 40vh;   /* يغطي أغلب الشاشة */
+    height: 40vh;   /* يغطي أغلب الشاشة */
   }
 }
 

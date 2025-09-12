@@ -1903,7 +1903,7 @@ h3{
   align-items: center;
   z-index: 999;
  /* خط علوي بالأحمر */
-  box-shadow: 0 -4px 20px orange; /* ظل غامق */
+  box-shadow: 0 -4px 20px black; /* ظل غامق */
   font-size: 1rem;
   border-radius: 16px 16px 0 0; /* مفرڭعة من التحت */
   transition: all 0.3s ease;
@@ -3051,7 +3051,7 @@ color: orange;
   justify-content: center;
   align-items: center;
   position : relative;
-  bottom:20px;
+  bottom:25px;
 }
 
 
@@ -3069,6 +3069,7 @@ color: orange;
   height: auto;          /* خليها تتأقلم */
   max-height: 50vh;      /* باش ماتخنقش فالتليفون */
   object-fit: contain;
+  padding: 5px;
   /* الصورة كاملة */
 }
 

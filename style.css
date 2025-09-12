@@ -3216,7 +3216,7 @@ color: orange;
   margin-top: 10px;
   position :relative;
   bottom:20px;
-  background :orange;
+  
   
 }
 
@@ -3230,11 +3230,10 @@ color: orange;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size:12px;
+
   transition: 0.3s;
   z-index:1;
-  position :relative;
-  bottom:14px;
+  
 }
 
 .control:hover {

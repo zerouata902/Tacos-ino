@@ -3100,6 +3100,14 @@ color: orange;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   }
 
+/* 📱 الهاتف */
+@media (max-width: 480px) {
+  .slider {
+    height: 36vh;   /* ارتفاع مناسب للتليفون */
+  }
+}
+
+
 /* 📱📲 التابليت */
 @media (min-width: 481px) and (max-width: 1024px) {
   .slider {
@@ -3230,6 +3238,7 @@ color: orange;
   justify-content: center;
   gap: 10px;
   position :relative;
+  margin-top:10px;
   bottom:20px;
   background:black;
   
@@ -3245,11 +3254,9 @@ color: orange;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size:10px;
+  font-size:8px;
   transition: 0.3s;
   z-index:1;
-  position :relative;
-  bottom:14px;
 }
 
 .control:hover {

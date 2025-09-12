@@ -1978,10 +1978,26 @@ h3{
   overflow-y: auto;
   z-index: 1000;
 }
-.cart-page h3{
-  color:white;
-  font-size:20px;
-  top:5px;
+
+.cart-page p {
+    color:white;
+    font-size:17px;
+    top:4px;
+}
+
+.cart-page h3 {
+    color:white;
+    font-size:20px;
+    top:5px;
+    animation: change 1s infinite alternate;
+}
+@keyframes change {
+    from {
+        color: white;
+    }
+    to {
+        color:black;
+    }
 }
 .cart-item {
   display: flex;
@@ -3207,8 +3223,8 @@ color: orange;
 .control {
   width: 25px;
   height: 25px;
-  background-color: black;
-  color: black;
+  background-color:black;
+  color: white;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -3222,10 +3238,11 @@ color: orange;
 }
 
 .control:hover {
-  background-color: orange;
+  background-color: white;
+  color:black;
 }
 .control.active {
-  background-color: orange; /* اللون الأحمر */
+  background-color: white; /* اللون الأحمر */
   color: black;
   }
   

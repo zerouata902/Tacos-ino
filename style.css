@@ -1940,11 +1940,11 @@ h3{
 
 /* الزر عادي، صغيور وأنيق */
 .order-btn {
-  background-color:white;
-  color: black ;
+  background-color:black;
+  color:white;
   border: none;
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
@@ -3029,7 +3029,7 @@ color: orange;
 
 .slider {
   width: 100%;
-  max-height: 50vh; /* مايفوتش نصف الشاشة */
+  max-height: 55vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
   margin: 73px auto 20px;
   
@@ -3080,7 +3080,7 @@ color: orange;
 /* 📱 الهاتف */
 @media (max-width: 480px) {
   .slider {
-    height: 35vh;   /* ارتفاع مناسب للتليفون */
+    height: 34vh;   /* ارتفاع مناسب للتليفون */
   }
 }
 
@@ -3233,7 +3233,8 @@ color: orange;
   
   transition: 0.3s;
   z-index:1;
-  
+  position :relative;
+  bottom:12px;
 }
 
 .control:hover {

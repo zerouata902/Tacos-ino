@@ -3045,13 +3045,13 @@ color: orange;
   width: 100%;
   max-height: 50vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
-  margin: 70px auto 20px;
+  margin: 74px auto 20px;
   background:black;
   display: flex;
   justify-content: center;
   align-items: center;
   position : relative;
-  bottom:10px;
+  bottom:20px;
 }
 
 
@@ -3241,7 +3241,7 @@ color: orange;
   justify-content: center;
   gap: 10px;
   position: relative ;
-  bottom:20px;
+  bottom:27px;
   
 }
 

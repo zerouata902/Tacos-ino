@@ -3041,17 +3041,17 @@ color: orange;
   }
 
 
-
-/* Ø§Ù„ØµÙˆØ±Ø© Ø§Ù„ÙƒØ¨ÙŠØ±Ø© */
 .slider {
   width: 100%;
+  max-height: 55vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
-  
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  top:15px
-  background: #000;
-  
-  
+  margin: 73px auto 20px;
+  background:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position : relative;
+  bottom:26px;
 }
 
 
@@ -3246,8 +3246,8 @@ color: orange;
 }
 
 .control {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   background-color:orange;
   color:black;
   font-weight: bold;

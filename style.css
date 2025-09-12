@@ -1895,15 +1895,15 @@ h3{
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: orange; /* خلفية بيضاء */
-  color: black; /* نص غامق */
+  background-color: black; /* خلفية بيضاء */
+  color: white; /* نص غامق */
   padding: 12px 24px;
   display: flex;
   justify-content: space-between; /* محتوى موزع أفقيًا */
   align-items: center;
   z-index: 999;
  /* خط علوي بالأحمر */
-  box-shadow: 0 -4px 20px black; /* ظل غامق */
+  box-shadow: 0 -4px 20px orange; /* ظل غامق */
   font-size: 1rem;
   border-radius: 16px 16px 0 0; /* مفرڭعة من التحت */
   transition: all 0.3s ease;
@@ -1949,13 +1949,13 @@ h3{
 
 .cart-left i {
   font-size: 22px;
-  color:black;
+  color:white;
 }
 
 /* الزر عادي، صغيور وأنيق */
 .order-btn {
-  background-color:black;
-  color:white;
+  background-color:orange;
+  color:black;
   border: none;
   padding: 8px 16px;
   border-radius: 15px;

@@ -1613,15 +1613,24 @@
   </div>
 </div>
   
+
 <footer class="cart-bar" onclick="goToCartPage()">
   <div class="cart-left">
     <i class="fa fa-shopping-cart"></i>
-    <span style="font-weight: bold;" id="total" data-fr="Total: 0 DH" data-ar="المجموع: 0 درهم">Total: 0 DH</span>
+    <span id="cart-count">0</span> <!-- 🆕 البادج -->
+
+    <span style="font-weight: bold;" id="total" 
+          data-fr="Total: 0 DH" 
+          data-ar="المجموع: 0 درهم">
+      Total: 0 DH
+    </span>
   </div>
-  <button class="order-btn" onclick="goToCartPage()" data-fr="Commander" data-ar="أطلب الآن">
-    أطلب الآن
+  <button class="order-btn" onclick="goToCartPage()" 
+          data-fr="Commander" 
+          data-ar="أطلب الآن">
+     Commander
   </button>
-</footer>
+	</footer>
 
 <!-- أيقونة الإغلاق داخل cart-page -->
 <div class="cart-page" id="cart-page">

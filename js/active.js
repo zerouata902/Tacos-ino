@@ -164,7 +164,7 @@ let selectedLatLng = null;
 let restaurantLatLng = [30.347447, -9.492622];
 let map, customerMarker;
 
-const arabicPhrases = ["لسـنَـا الوحيدين", "لكـِننــا لأفـضـل"];
+const arabicPhrases = ["", ""];
 let currentIndex = 0;
 const arabicText = document.getElementById("arabic-text");
 

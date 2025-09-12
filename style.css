@@ -3240,6 +3240,7 @@ color: orange;
   display: flex;
   justify-content: center;
   gap: 10px;
+  position: relative ;
   bottom:20px;
   
 }

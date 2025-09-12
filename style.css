@@ -3242,7 +3242,7 @@ color: orange;
   gap: 10px;
   position: relative ;
   bottom:30px;
-  background :white;
+  background :orange;
   
 }
 
@@ -3250,7 +3250,7 @@ color: orange;
   width: 25px;
   height: 25px;
   background-color:black;
-  color:orange;
+  color:black;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -3261,11 +3261,11 @@ color: orange;
 }
 
 .control:hover {
-  background-color:orange;
-  color:black;
+  background-color:black;
+  color:orange;
 }
 .control.active {
-  background-color: orange; /* اللون الأحمر */
-  color: black;
+  background-color: black; /* اللون الأحمر */
+  color: orange;
   }
   

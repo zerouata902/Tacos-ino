@@ -3013,7 +3013,7 @@ color: orange;
 
 .slider {
   width: 100%;
-  max-height: 50vh; /* مايفوتش نصف الشاشة */
+  max-height: 30vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
   box-shadow: 0 4px 8px black;
   margin: 73px auto 20px;
@@ -3063,7 +3063,7 @@ color: orange;
 /* 📱 الهاتف */
 @media (max-width: 480px) {
   .slider {
-    height: 36vh;   /* ارتفاع مناسب للتليفون */
+    height: 34vh;   /* ارتفاع مناسب للتليفون */
   }
 }
 

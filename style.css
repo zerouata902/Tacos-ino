@@ -3051,7 +3051,7 @@ color: orange;
   justify-content: center;
   align-items: center;
   position : relative;
-  bottom:24px;
+  bottom:20px;
 }
 
 
@@ -3068,7 +3068,8 @@ color: orange;
     width: 100%;
   height: auto;          /* خليها تتأقلم */
   max-height: 50vh;      /* باش ماتخنقش فالتليفون */
-  object-fit: contain;   /* الصورة كاملة */
+  object-fit: contain;
+  /* الصورة كاملة */
 }
 
 
@@ -3263,7 +3264,7 @@ color: orange;
   color:black;
 }
 .control.active {
-  background-color: white; /* اللون الأحمر */
+  background-color: orange; /* اللون الأحمر */
   color: black;
   }
   

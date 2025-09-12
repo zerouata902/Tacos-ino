@@ -3227,18 +3227,18 @@ color: orange;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 30px;
   position :relative;
   bottom:20px;
-  background:black
+  background:orange;
   
 }
 
 .control {
   width: 25px;
   height: 25px;
-  background-color:orange;
-  color:black;
+  background-color:black;
+  color:white;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -3252,7 +3252,7 @@ color: orange;
 }
 
 .control:hover {
-  background-color: white;
+  background-color:white;
   color:black;
 }
 .control.active {

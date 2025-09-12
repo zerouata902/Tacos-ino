@@ -3051,7 +3051,7 @@ color: orange;
   justify-content: center;
   align-items: center;
   position : relative;
-  bottom:20px;
+  bottom:25px;
 }
 
 
@@ -3087,7 +3087,7 @@ color: orange;
   max-width: 900px;
   overflow: hidden;
   position: relative;
-  bottom:15px;
+  bottom:18px;
   
 }
 
@@ -3220,7 +3220,7 @@ color: orange;
   position: relative;
   letter-spacing: 2px;         /* مسافة بين الحروف */
   text-transform: uppercase;   /* الكتابة كاملة كابيتال */
-    background: linear-gradient(70deg, orange,#870D0D,white);
+    background: linear-gradient(70deg, black,#870D0D,white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite; /* أنيميشن ديال اللمعان */
@@ -3241,7 +3241,8 @@ color: orange;
   justify-content: center;
   gap: 10px;
   position: relative ;
-  bottom:27px;
+  bottom:30px;
+  background :white;
   
 }
 

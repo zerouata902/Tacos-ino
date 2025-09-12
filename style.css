@@ -1833,15 +1833,15 @@ h3{
   margin-bottom: 10px;
    font-family: 'Amiri', serif;
    font-weight: bold;
-   font-size:28px;
-     background: linear-gradient(to right, white 35%, black 50%);
+   font-size:25px;
+     background:white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .border-left {
   width: 7px;
   height: 25px;
-  background: linear-gradient(black,orange);
+  background:black;
   margin-right: 11px;
  
 }
@@ -3054,7 +3054,7 @@ color: orange;
   overflow: hidden;
   position: relative;
   bottom:15px;
-  background:black;
+  
 }
 
 .small-slides {

@@ -3041,34 +3041,42 @@ color: orange;
   }
 
 
+
+/* Ø§Ù„ØµÙˆØ±Ø© Ø§Ù„ÙƒØ¨ÙŠØ±Ø© */
 .slider {
   width: 100%;
-  max-height: 55vh; /* مايفوتش نصف الشاشة */
+  height:230px;
   overflow: hidden;
-  margin: 73px auto 20px;
-  background:black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position : relative;
-  bottom:26px;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  background: #000;
+  
+  
 }
+
+
 
 .slides {
   display: flex;
-  width: 100%;
-  transition: transform 1s ease-in-out;
+  width: 100%; /* Ø®Ù„ÙŠÙ‡ 100% ØºÙŠØ± */
+  transition: transform 1s ease-in-out; /* Ø¨Ø§Ø´ ÙŠØªØ­Ø±Ùƒ Ø¨Ù†Ø¹ÙˆÙ…Ø© */
 }
 
-.slides img,
+
+.slides img {
+  flex: 0 0 100%;   /* ÙƒÙ„ ØµÙˆØ±Ø© ØªØ§Ø®Ø¯ 100% Ù…Ù† Ø¹Ø±Ø¶ Ø§Ù„Ø³Ù„Ø§ÙŠØ¯Ø± */
+  height: 240px;
+  object-fit: contain; /* Ø§Ù„ØµÙˆØ±Ø© ÙƒØ§Ù…Ù„Ø© */
+}
+
+
 .slides video {
-  flex: 0 0 100%;
-  width: 100%;
-  height: auto;          /* خليها تتأقلم */
-  max-height: 50vh;      /* باش ماتخنقش فالتليفون */
-  object-fit: contain;   /* الصورة كاملة */
-  background: white;
-  padding: 5px;
+  flex: 0 0 100%;   /* ÙƒÙ„ ØµÙˆØ±Ø© ØªØ§Ø®Ø¯ 100% Ù…Ù† Ø¹Ø±Ø¶ Ø§Ù„Ø³Ù„Ø§ÙŠØ¯Ø± */
+  height: 230px;
+  object-fit: contain;
+  
+  /* Ø§Ù„ØµÙˆØ±Ø© ÙƒØ§Ù…Ù„Ø© */
 }
 
 .small-slider {
@@ -3077,11 +3085,12 @@ color: orange;
   overflow: hidden;
   position: relative;
   bottom:15px;
+  
 }
 
 .small-slides {
   display: flex;
-  width: 200%; /* حيت عندنا 6 صور */
+  width: 200%; /* Ø­ÙŠØª Ø¹Ù†Ø¯Ù†Ø§ 6 ØµÙˆØ± */
 }
 
 .small-slides img {
@@ -3089,14 +3098,7 @@ color: orange;
   flex-shrink: 0;
   margin: 0 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-
-/* 📱 الهاتف */
-@media (max-width: 480px) {
-  .slider {
-    height: 34vh;   /* ارتفاع مناسب للتليفون */
   }
-}
 
 /* 📱📲 التابليت */
 @media (min-width: 481px) and (max-width: 1024px) {

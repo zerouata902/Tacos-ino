@@ -3011,41 +3011,33 @@ color: orange;
   }
 
 
-/* الصورة الكبيرة */
 .slider {
   width: 100%;
-  height:230px;
+  max-height: 50vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
-  margin-top: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  margin-bottom: 20px;
-  background: #000;
-  
-  
+  box-shadow: 0 4px 8px black;
+  margin: 73px auto 20px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 .slides {
   display: flex;
-  width: 100%; /* خليه 100% غير */
-  transition: transform 1s ease-in-out; /* باش يتحرك بنعومة */
+  width: 100%;
+  transition: transform 1s ease-in-out;
 }
 
-
-.slides img {
-  flex: 0 0 100%;   /* كل صورة تاخد 100% من عرض السلايدر */
-  height: 240px;
-  object-fit: contain; /* الصورة كاملة */
-}
-
-
+.slides img,
 .slides video {
-  flex: 0 0 100%;   /* كل صورة تاخد 100% من عرض السلايدر */
-  height: 230px;
-  object-fit: contain;
-  
-  /* الصورة كاملة */
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;          /* خليها تتأقلم */
+  max-height: 50vh;      /* باش ماتخنقش فالتليفون */
+  object-fit: contain;   /* الصورة كاملة */
+  background: white;
+  padding: 5px;
 }
 
 .small-slider {
@@ -3054,7 +3046,6 @@ color: orange;
   overflow: hidden;
   position: relative;
   bottom:15px;
-  
 }
 
 .small-slides {
@@ -3067,6 +3058,28 @@ color: orange;
   flex-shrink: 0;
   margin: 0 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* 📱 الهاتف */
+@media (max-width: 480px) {
+  .slider {
+    height: 36vh;   /* ارتفاع مناسب للتليفون */
+  }
+}
+
+/* 📱📲 التابليت */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .slider {
+    max-height: 40vh;   /* يغطي أغلب الشاشة */
+  }
+}
+
+/* 💻 الحاسوب */
+@media (min-width: 1025px) {
+  .slider {
+    width: 100%;
+    height: 90vh;   /* كبير ويغطي الشاشة */
+  }
 }
 
 

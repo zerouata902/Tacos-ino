@@ -3013,14 +3013,16 @@ color: orange;
 
 .slider {
   width: 100%;
-  max-height: 30vh; /* مايفوتش نصف الشاشة */
+  max-height: 40vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
   box-shadow: 0 4px 8px black;
   margin: 73px auto 20px;
-  background: white;
+  
   display: flex;
   justify-content: center;
   align-items: center;
+  position : relative;
+  bottom:20px;
 }
 
 .slides {

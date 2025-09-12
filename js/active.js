@@ -159,7 +159,6 @@ function hidePreloader(duration = 3000) {
 
 
 
-
 let cart = [];
 let selectedLatLng = null;
 let restaurantLatLng = [30.347447, -9.492622];
@@ -186,6 +185,7 @@ function addToCart(name, price, image) {
     cart.push({ name, price, image, qty: 1 });
   }
   updateTotal();
+  updateCartCount(); // 🆕 تحديث البادج
 
   // 🆕 إخفاء العناصر الزائدة عند الإضافة
   hideExtras();
@@ -195,6 +195,23 @@ function addToCart(name, price, image) {
 function updateTotal() {
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
   document.getElementById("total").innerText = "Total: " + total + " DH";
+}
+
+// ✅ تحديث البادج ديال عدد العناصر + هتزاز
+function updateCartCount() {
+  const cartBadge = document.getElementById("cart-count");
+  const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
+
+  if (totalItems > 0) {
+    cartBadge.textContent = totalItems;
+    cartBadge.style.display = "inline-block";
+
+    // 🆕 أنيمشن الهتزاز
+    cartBadge.classList.add("shake");
+    setTimeout(() => cartBadge.classList.remove("shake"), 300);
+  } else {
+    cartBadge.style.display = "none";
+  }
 }
 
 // ✅ عرض صفحة السلة فقط إذا فيها عناصر
@@ -239,16 +256,18 @@ function changeQty(index, delta) {
   if (cart[index].qty <= 0) cart.splice(index, 1);
   showCartItems();
   updateTotal();
+  updateCartCount(); // 🆕 تحديث البادج
 }
 
 function removeItem(index) {
   cart.splice(index, 1);
   showCartItems();
   updateTotal();
+  updateCartCount(); // 🆕 تحديث البادج
 }
 
 // ====== إضافة: تعريف نصف قطر التوصيل (بالمتر)
-const deliveryRadius = 3500; // 1000 متر
+const deliveryRadius = 4000; // 1000 متر
 
 // ====== إضافة: حساب المسافة بين نقطتين LatLng
 function getDistance(latlng1, latlng2) {
@@ -276,8 +295,6 @@ function showOrderOptions() {
   document.getElementById("order-options").style.display = "block";
 }
 
-
-
 // ✅ اختيار نوع الطلب
 function selectOption(type) {
   if (cart.length === 0) {
@@ -286,9 +303,7 @@ function selectOption(type) {
   }
 
   document.getElementById("order-options").style.display = "none";
-
-document.getElementById("order-button").style.display = "none";
-
+  document.getElementById("order-button").style.display = "none";
 
   if (type === "delivery") {
     document.getElementById("map-container").style.display = "block";
@@ -308,13 +323,12 @@ function initMap() {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
   // أيقونة المطعم (دائرية بالصورة)
-    const restaurantIcon = L.icon({
-    iconUrl: 'images/Logotime.png',
+  const restaurantIcon = L.divIcon({
+    html: '<div class="restaurant-icon"><img src="images/Logoo.jpg" alt="Restaurant"></div>',
+    className: '',
     iconSize: [50, 50],
-    iconAnchor: [25, 50],
-    className: 'circular-icon'
+    iconAnchor: [25, 50]
   });
-  
 
   L.marker(restaurantLatLng, { icon: restaurantIcon })
     .addTo(map)
@@ -332,7 +346,7 @@ function initMap() {
   // أيقونة الزبون (Font Awesome رجل واقف)
   const customerIcon = L.divIcon({
     html: '<div class="customer-icon"><i class="fas fa-male"></i></div>',
-    className: '', // ما نحتاجوش كلاس خارجي
+    className: '',
     iconSize: [40, 40],
     iconAnchor: [20, 40]
   });
@@ -352,7 +366,7 @@ function initMap() {
     } else {
       customerMarker = L.marker(selectedLatLng, { icon: customerIcon })
         .addTo(map)
-        .bindPopup("✅  شكرا ، الموقع تسجّل ")
+        .bindPopup("✅ يعطيك الصحة، الموقع تسجّل ")
         .openPopup();
     }
 
@@ -362,7 +376,7 @@ function initMap() {
   setTimeout(() => {
     map.invalidateSize();
   }, 300);
-      }
+}
 
 // ✅ إرسال الطلب للواتساب
 function sendWhatsAppOrder() {
@@ -372,16 +386,16 @@ function sendWhatsAppOrder() {
   }
 
   let message = "🍽️ **تفاصيل الطلب**\n\n";
-cart.forEach(item => {
-  message += ` ✓ ${item.name} ×${item.qty}: ${item.price * item.qty} DH\n`;
-});
+  cart.forEach(item => {
+    message += ` ✓ ${item.name} ×${item.qty}: ${item.price * item.qty} DH\n`;
+  });
 
-message += `\n💰 **المجموع:** ${cart.reduce((sum, i) => sum + i.price * i.qty, 0)} DH`;
+  message += `\n💰 **المجموع:** ${cart.reduce((sum, i) => sum + i.price * i.qty, 0)} DH`;
 
-if (selectedLatLng) {
-  message += `\n\n📍 **الموقع:** https://www.google.com/maps?q=${selectedLatLng.lat},${selectedLatLng.lng}`;
-  message += `\n🧾 راك فالأمان! غادي نجيو تال عند باب دارك  `;
-}
+  if (selectedLatLng) {
+    message += `\n\n📍 **الموقع:** https://www.google.com/maps?q=${selectedLatLng.lat},${selectedLatLng.lng}`;
+    message += `\n🧾 راك فالأمان! غادي نجيو تال عند باب دارك  `;
+  }
 
   const url = "https://wa.me/212687902690?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
@@ -389,9 +403,6 @@ if (selectedLatLng) {
   document.getElementById("map-container").style.display = "none";
   document.getElementById("send-order-button").style.display = "none";
 }
-
-// ✅ البحث على الأكلات
-
 
 // ✅ إظهار/إخفاء المزيد من العناصر لكل كاتيجوري
 function toggleItems(button) {
@@ -408,119 +419,86 @@ function toggleItems(button) {
 }
 
 // ✅ إخفاء العناصر الزائدة أوتوماتيكياً عند الضغط على أي منتج
-function hideExtras() {
-  document.querySelectorAll('.item.extra').forEach(extra => {
-    extra.classList.add('hidden');
-  });
-  document.querySelectorAll('.show-more-btn').forEach(btn => {
-    btn.textContent = 'اكتشف المزيد';
-  });
-}
-
-
-
 function showCategory(categoryId) {
-  // نخفي جميع الأقسام
   const sections = document.querySelectorAll('.category-section');
+
+  // نخفي كل الأقسام الأخرى
   sections.forEach(section => {
-    section.classList.remove('show');
-    section.style.display = 'none';
+    if (section.id !== categoryId) {
+      section.classList.remove('show');
+      setTimeout(() => {
+        section.style.display = 'none';
+      }, 500);
+    }
   });
 
-  // نختار القسم اللي باغي نعرضوه
+  // نظهر القسم المختار
   const selectedSection = document.getElementById(categoryId);
   if (selectedSection) {
-    // ✅ نخفي العناصر الزائدة فقط داخل هذا القسم
-    selectedSection.querySelectorAll('.item.extra').forEach(extra => {
-      extra.classList.add('hidden');
-    });
-    selectedSection.querySelectorAll('.show-more-btn').forEach(btn => {
-      btn.textContent = 'اكتشف المزيد';
-    });
-
-    // نظهر القسم المختار
     selectedSection.style.display = 'block';
 
     setTimeout(() => {
       selectedSection.classList.add('show');
     }, 50);
 
-    selectedSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    // نخلي القسم وسط الشاشة
+    const topOffset = selectedSection.offsetTop - (window.innerHeight / 2) + (selectedSection.offsetHeight / 2);
+    window.scrollTo({
+      top: topOffset,
+      behavior: 'smooth'
+    });
+
+    // نخفي العناصر الزائدة
+    selectedSection.querySelectorAll('.item.extra').forEach(extra => {
+      extra.classList.add('hidden');
+    });
+    selectedSection.querySelectorAll('.show-more-btn').forEach(btn => {
+      btn.textContent = 'اكتشف المزيد';
     });
   }
 }
 
-// خط أحمر متحرك
-
-
-// أضف داخل showCategory بعد scrollIntoView:
-document.querySelectorAll('.category-buttons button').forEach(btn => {
-  btn.classList.remove('active');
-});
-
-// نحدد الزر اللي تكليكا عليه
-const activeBtn = Array.from(document.querySelectorAll('.category-buttons button'))
-  .find(btn => btn.textContent.trim().toLowerCase() === categoryId.toLowerCase());
-
-if (activeBtn) {
-  activeBtn.classList.add('active');
-
-  // نخلي الزر وسط السطر
-  activeBtn.scrollIntoView({
-    behavior: 'smooth',
-    inline: 'center',
-    block: 'nearest'
-  });
-}
-
-
-
-
-
-
+// ✅ إخفاء صفحة السلة
 function hideCartPage() {
   document.getElementById("cart-page").style.display = "none";
 }
 
-
-
-
-
-
-  function initCustomerReviewsSlider() {
-    const swiper = new Swiper('.mySwiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false
-      },
-      grabCursor: true,
-      direction: 'horizontal',
-      rtl: false, // خاصها تبقى false باش يدوز من ليسار لليمين
-      breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-      }
-    });
-  }
-
-  // Call the function after DOM loads
-  document.addEventListener("DOMContentLoaded", function () {
-    initCustomerReviewsSlider();
+// ✅ سلايدر تعليقات الزبناء
+function initCustomerReviewsSlider() {
+  const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    grabCursor: true,
+    direction: 'horizontal',
+    rtl: false,
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
   });
+}
 
-  
-  
-  function switchLang(lang) {
+document.addEventListener("DOMContentLoaded", function () {
+  initCustomerReviewsSlider();
+});
+
+// ✅ تغيير اللغة
+function switchLang(lang) {
   document.querySelectorAll('[data-fr]').forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
     if (text) el.textContent = text;
   });
 }
 
-        
+
+
+
+
+
+

@@ -324,7 +324,7 @@ function initMap() {
 
   // أيقونة المطعم (دائرية بالصورة)
   const restaurantIcon = L.divIcon({
-    html: '<div class="restaurant-icon"><img src="images/Logoo.jpg" alt="Restaurant"></div>',
+    html: '<div class="restaurant-icon"><img src="images/Logotime.png" alt="Restaurant"></div>',
     className: '',
     iconSize: [50, 50],
     iconAnchor: [25, 50]

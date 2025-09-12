@@ -3013,16 +3013,15 @@ color: orange;
 
 .slider {
   width: 100%;
-  max-height: 40vh; /* مايفوتش نصف الشاشة */
+  max-height: 50vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
-  box-shadow: 0 4px 8px black;
   margin: 73px auto 20px;
   
   display: flex;
   justify-content: center;
   align-items: center;
   position : relative;
-  bottom:24px;
+  bottom:26px;
 }
 
 .slides {
@@ -3219,7 +3218,7 @@ color: orange;
   transition: 0.3s;
   z-index:1;
   position :relative;
-  bottom:10px;
+  bottom:12px;
 }
 
 .control:hover {

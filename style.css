@@ -3043,15 +3043,15 @@ color: orange;
 
 .slider {
   width: 100%;
-  max-height: 55vh; /* مايفوتش نصف الشاشة */
+  max-height: 50vh; /* مايفوتش نصف الشاشة */
   overflow: hidden;
-  margin: 73px auto 20px;
+  margin: 70px auto 20px;
   background:black;
   display: flex;
   justify-content: center;
   align-items: center;
   position : relative;
-  bottom:26px;
+  bottom:24px;
 }
 
 
@@ -3241,27 +3241,25 @@ color: orange;
   position :relative;
   margin-top:20px;
   bottom:30px;
-  background:black;
   
 }
 
 .control {
-  width: 18px;
-  height: 18px;
-  background-color:orange;
-  color:black;
+  width: 25px;
+  height: 25px;
+  background-color:black;
+  color:orange;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size:8px;
   transition: 0.3s;
   z-index:1;
 }
 
 .control:hover {
-  background-color:white;
+  background-color:orange;
   color:black;
 }
 .control.active {
